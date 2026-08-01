@@ -2841,11 +2841,20 @@ footer{
 
     .hero-container{
 
-    min-height:auto;
+    min-height:70vh;
 
-    padding:100px 20px 50px;
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:160px 24px 100px;
 
 }
+
+
 
     .hero-badge{
 
