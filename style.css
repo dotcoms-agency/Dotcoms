@@ -984,7 +984,7 @@ header{
 
 .hero-content h1{
 
-    margin-bottom:24px;
+    margin-bottom:16px;
 
     max-width:900px;
 
@@ -996,7 +996,7 @@ header{
 
     max-width:680px;
 
-    margin:0 auto 40px;
+    margin:0 auto 30px;
 
     font-size:1.1rem;
 
@@ -1006,7 +1006,7 @@ header{
 
     justify-content:center;
 
-    margin-bottom:70px;
+    margin-bottom:30px;
 
 }
 
@@ -2722,9 +2722,8 @@ footer{
 
     section{
 
-        padding:70px 20px;
-
-    }
+    padding:55px 20px;
+}
 
     .section-heading{
 
@@ -2842,11 +2841,11 @@ footer{
 
     .hero-container{
 
-        min-height:100vh;
+    min-height:auto;
 
-        padding:110px 20px 60px;
+    padding:100px 20px 50px;
 
-    }
+}
 
     .hero-badge{
 
