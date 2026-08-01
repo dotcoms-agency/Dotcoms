@@ -72,22 +72,19 @@ window.addEventListener("scroll", () => {
 
 
 
-/* ===========================
-   PRELOADER
-=========================== */
-
 window.addEventListener("load", () => {
 
-    const loader = document.getElementById("preloader");
+    const preloader = document.getElementById("preloader");
+
+    preloader.classList.add("hide");
 
     setTimeout(() => {
 
-        loader.classList.add("hide");
+        preloader.remove();
 
-    }, 800);
+    }, 600);
 
 });
-
 
 
 /* ===========================
