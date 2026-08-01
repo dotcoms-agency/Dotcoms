@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://dotcoms.netlify.app/sitemap.xml
