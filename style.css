@@ -385,7 +385,7 @@ section{
     align-items:center;
     text-align:center;
     padding:0 10%;
-    padding-top: 180px;
+    
 }
 
 .hero-content{
@@ -1737,7 +1737,7 @@ footer{
 
         text-align:center;
 
-        padding-top:140px;
+    
     }
 
     .hero-content{
@@ -1830,8 +1830,9 @@ footer{
     ========================= */
 
     .navbar{
-        padding:16px 20px;
-    }
+    top:15px;
+    padding:15px 20px;
+}
 
     .logo{
         font-size:28px;
@@ -1905,14 +1906,15 @@ footer{
        Hero
     ========================= */
 
-    .hero{
-        text-align:center;
-        padding-top:130px;
-        min-height: 100vh;
-        padding:140px 20px 80px;
-        display:flex;
-        justify-content:center;
-    }
+    .hero-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    padding:130px 20px 70px;
+}
 
     .hero-content{
         width:100%;
@@ -1922,29 +1924,27 @@ footer{
     }
 
     .hero-content h1{
-        font-size:56px;
-        line-height:1.05;
-    }
+    font-size:48px;
+    line-height:1.1;
+}
 
     .description{
-        max-width:100%;
-        font-size:1.1rem;
-    }
+    max-width:330px;
+    margin:0 auto 40px;
+    font-size:18px;
+}
 
     .hero-buttons{
-        flex-direction:column;
-        align-items:center;
-        width:100%;
-        gap:18px;
-        display:flex;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+}
 
-    }
-
-    .btn,
-    .btn-secondary{
-        width:100%;
-        max-width:320px;
-    }
+.btn,
+.btn-secondary{
+    width:280px;
+}
 
 
     /* =========================
