@@ -173,3 +173,26 @@ window.addEventListener("scroll",()=>{
     progressBar.style.width = progress + "%";
 
 });
+
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+
+const menu = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav-links");
+
+if (menu && nav) {
+    menu.addEventListener("click", () => {
+        menu.classList.toggle("active");
+        nav.classList.toggle("active");
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            menu.classList.remove("active");
+            nav.classList.remove("active");
+        });
+    });
+}
