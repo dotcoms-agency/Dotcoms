@@ -91,68 +91,6 @@ window.addEventListener("load", () => {
 
 
 /* ===========================
-   MOUSE SPOTLIGHT
-=========================== */
-
-const spotlight = document.body;
-
-window.addEventListener("mousemove", (e)=>{
-
-    spotlight.style.setProperty(
-        "--x",
-        `${e.clientX}px`
-    );
-
-    spotlight.style.setProperty(
-        "--y",
-        `${e.clientY}px`
-    );
-
-    spotlight.style.setProperty(
-        "--tx",
-        `translate(${e.clientX}px, ${e.clientY}px)`
-    );
-
-});
-
-
-
-/* ===========================
-   CUSTOM CURSOR
-=========================== */
-
-const cursor = document.querySelector(".cursor");
-const dot = document.querySelector(".cursor-dot");
-
-window.addEventListener("mousemove",(e)=>{
-
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-
-    dot.style.left = e.clientX + "px";
-    dot.style.top = e.clientY + "px";
-
-});
-
-document.querySelectorAll("a, button").forEach(item=>{
-
-    item.addEventListener("mouseenter",()=>{
-
-        cursor.classList.add("hover");
-
-    });
-
-    item.addEventListener("mouseleave",()=>{
-
-        cursor.classList.remove("hover");
-
-    });
-
-});
-
-
-
-/* ===========================
    SCROLL PROGRESS
 =========================== */
 
