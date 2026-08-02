@@ -1,34 +1,6 @@
 console.log("Welcome to Dotcoms 🚀");
 
-/* ===========================
-   SCROLL REVEAL
-=========================== */
 
-const reveals = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver((entries, observer) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("active");
-
-            observer.unobserve(entry.target);
-
-        }
-
-    });
-
-}, {
-    threshold: 0.15
-});
-
-reveals.forEach(section => {
-
-    observer.observe(section);
-
-});
 
 
 
@@ -131,3 +103,118 @@ if (menu && nav) {
         });
     });
 }
+
+
+/* ==========================================
+   AUTO REVEAL ANIMATIONS
+========================================== */
+
+const animatedElements = document.querySelectorAll(`
+.hero-content,
+.section-heading,
+.service-card,
+.why-card,
+.process-card,
+.about-content,
+.stat-card,
+.contact-card,
+.project-card,
+.pricing-card,
+.feature-card,
+.faq-item,
+.cta-box,
+.footer-content
+`);
+
+animatedElements.forEach((el, index) => {
+
+    el.classList.add("reveal");
+
+    el.style.transitionDelay = `${(index % 4) * 120}ms`;
+
+});
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("active");
+
+        }
+
+    });
+
+},{
+    threshold:0.15
+});
+
+animatedElements.forEach(el => observer.observe(el));
+
+
+
+/* ==========================================
+   MAGNETIC CARD EFFECT
+========================================== */
+
+document.querySelectorAll(
+".service-card,.why-card,.process-card,.project-card,.pricing-card,.feature-card,.contact-card,.stat-card"
+).forEach(card=>{
+
+    card.addEventListener("mousemove",e=>{
+
+        if(window.innerWidth<992) return;
+
+        const rect=card.getBoundingClientRect();
+
+        const x=e.clientX-rect.left;
+
+        const y=e.clientY-rect.top;
+
+        const rotateY=((x/rect.width)-0.5)*10;
+
+        const rotateX=((rect.height/2-y)/rect.height)*10;
+
+        card.style.transform=
+        `perspective(1000px)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        translateY(-12px)
+        scale(1.02)`;
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform="";
+
+    });
+
+});
+
+
+
+/* ==========================================
+   BUTTON GLOW FOLLOW
+========================================== */
+
+document.querySelectorAll(".btn,.btn-secondary").forEach(button=>{
+
+    button.addEventListener("mousemove",e=>{
+
+        const rect=button.getBoundingClientRect();
+
+        button.style.setProperty(
+            "--x",
+            `${e.clientX-rect.left}px`
+        );
+
+        button.style.setProperty(
+            "--y",
+            `${e.clientY-rect.top}px`
+        );
+
+    });
+
+});

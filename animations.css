@@ -1,0 +1,763 @@
+/* ===================================================
+   DOTCOMS PREMIUM ANIMATIONS
+   VERSION 1.0
+=================================================== */
+
+/* =========================
+   GLOBAL
+========================= */
+
+html{
+    scroll-behavior:smooth;
+}
+
+*{
+    transition:
+    transform .35s cubic-bezier(.22,1,.36,1),
+    box-shadow .35s cubic-bezier(.22,1,.36,1),
+    background-color .3s ease,
+    color .3s ease,
+    border-color .3s ease;
+}
+
+/* =========================
+   PAGE LOAD
+========================= */
+
+body{
+
+    animation:pageFade .8s ease;
+
+}
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn,
+.btn-secondary{
+
+    position:relative;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+}
+
+.btn:hover,
+.btn-secondary:hover{
+
+    transform:
+    translateY(-4px);
+
+}
+
+.btn:active,
+.btn-secondary:active{
+
+    transform:
+    translateY(-1px);
+
+}
+
+/* Shine Effect */
+
+.btn::before,
+.btn-secondary::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    transition:left .7s ease;
+
+}
+
+.btn:hover::before,
+.btn-secondary:hover::before{
+
+    left:140%;
+
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.service-card,
+.why-card,
+.process-card,
+.project-card,
+.pricing-card,
+.feature-card,
+.contact-card,
+.stat-card{
+
+    will-change:transform;
+
+}
+
+.service-card:hover,
+.why-card:hover,
+.process-card:hover,
+.project-card:hover,
+.pricing-card:hover,
+.feature-card:hover,
+.contact-card:hover,
+.stat-card:hover{
+
+    transform:
+    translateY(-10px);
+
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.project-image img{
+
+    transition:
+    transform .6s ease;
+
+}
+
+.project-card:hover img{
+
+    transform:scale(1.06);
+
+}
+
+/* ==========================================
+   HERO BADGE
+========================================== */
+
+.hero-badge{
+
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    animation:badgeFloat 5s ease-in-out infinite;
+
+}
+
+/* Live Status Dot */
+
+.hero-badge .dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    position:relative;
+
+}
+
+/* Pulse Ring */
+
+.hero-badge .dot::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    animation:livePulse 2s ease-out infinite;
+
+}
+
+@keyframes livePulse{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:.7;
+
+    }
+
+    70%{
+
+        transform:scale(2.8);
+
+        opacity:0;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
+
+/* Floating Badge */
+
+@keyframes badgeFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-4px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+
+    transition:
+    letter-spacing .35s ease,
+    transform .35s ease;
+
+}
+
+.logo:hover{
+
+    letter-spacing:2px;
+
+    transform:scale(1.02);
+
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto;
+
+    }
+
+}
+
+
+/* ==========================================
+   AUTO REVEAL
+========================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22,1,.36,1);
+
+    will-change:
+        opacity,
+        transform;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ==========================================
+   PREMIUM CARD HOVER
+========================================== */
+
+.service-card,
+.why-card,
+.process-card,
+.project-card,
+.pricing-card,
+.feature-card,
+.contact-card,
+.stat-card{
+
+    transform-style:preserve-3d;
+
+    backface-visibility:hidden;
+
+}
+
+@media (hover:hover){
+
+.service-card:hover,
+.why-card:hover,
+.process-card:hover,
+.project-card:hover,
+.pricing-card:hover,
+.feature-card:hover,
+.contact-card:hover,
+.stat-card:hover{
+
+    transform:
+        perspective(1000px)
+        rotateX(4deg)
+        rotateY(-4deg)
+        translateY(-12px)
+        scale(1.02);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+
+}
+
+}
+
+
+/* ==========================================
+   PREMIUM BUTTON GLOW
+========================================== */
+
+.btn,
+.btn-secondary{
+
+    position:relative;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+}
+
+.btn::after,
+.btn-secondary::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    left:var(--x,50%);
+    top:var(--y,50%);
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        rgba(255,255,255,.18),
+        transparent 70%
+    );
+
+    opacity:0;
+
+    transition:
+        opacity .35s ease;
+
+    pointer-events:none;
+
+}
+
+.btn:hover::after,
+.btn-secondary:hover::after{
+
+    opacity:1;
+
+}
+
+
+/* ==========================================
+   PREMIUM GRID BACKGROUND
+========================================== */
+
+.background-grid{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-10;
+
+    overflow:hidden;
+
+}
+
+/* Moving Grid */
+
+.background-grid::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-200px;
+
+    background-image:
+
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+
+    background-size:60px 60px;
+
+    animation:gridMove 35s linear infinite;
+
+    transform-origin:center;
+
+}
+
+/* Light Sweep */
+
+.background-grid::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-40%;
+
+    background:
+
+        linear-gradient(
+            115deg,
+            transparent 35%,
+            rgba(255,255,255,.04) 50%,
+            transparent 65%
+        );
+
+    animation:lightSweep 10s linear infinite;
+
+}
+
+@keyframes gridMove{
+
+    from{
+
+        transform:
+            translate(0,0);
+
+    }
+
+    to{
+
+        transform:
+            translate(-60px,-60px);
+
+    }
+
+}
+
+@keyframes lightSweep{
+
+    from{
+
+        transform:
+            translateX(-120%) rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            translateX(120%) rotate(0deg);
+
+    }
+
+}
+
+
+/* ==========================================
+   NAVIGATION ANIMATION
+========================================== */
+
+.nav-links a{
+
+    position:relative;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:linear-gradient(90deg,#00d4ff,#8b5cf6);
+
+    transform:translateX(-50%);
+
+    transition:width .35s ease;
+
+    border-radius:100px;
+
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+
+.service-icon,
+.why-card i,
+.feature-card i,
+.contact-card i{
+
+    transition:
+        transform .35s ease,
+        color .35s ease;
+
+}
+
+.service-card:hover .service-icon,
+.why-card:hover i,
+.feature-card:hover i,
+.contact-card:hover i{
+
+    transform:scale(1.15) rotate(-8deg);
+
+}
+
+
+.section-heading h2{
+
+    transition:
+        letter-spacing .35s ease;
+
+}
+
+.section-heading:hover h2{
+
+    letter-spacing:1px;
+
+}
+
+
+.project-image{
+
+    overflow:hidden;
+
+}
+
+.project-image img{
+
+    transition:
+
+        transform .7s ease,
+        filter .7s ease;
+
+}
+
+.project-card:hover img{
+
+    transform:scale(1.08);
+
+    filter:brightness(1.05);
+
+}
+
+
+
+/* ==========================================
+   CONTACT SECTION
+========================================== */
+
+.contact-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        transform .4s cubic-bezier(.22,1,.36,1),
+        box-shadow .4s ease,
+        border-color .4s ease;
+
+    animation:contactFade .8s ease both;
+
+}
+
+/* Stagger Animation */
+
+.contact-card:nth-child(1){
+
+    animation-delay:.1s;
+
+}
+
+.contact-card:nth-child(2){
+
+    animation-delay:.25s;
+
+}
+
+.contact-card:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+/* Hover */
+
+.contact-card:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.02);
+
+}
+
+/* Moving Shine */
+
+.contact-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-150%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    transition:left .8s ease;
+
+}
+
+.contact-card:hover::before{
+
+    left:160%;
+
+}
+
+/* Icon */
+
+.contact-card i{
+
+    transition:
+        transform .4s ease;
+
+}
+
+.contact-card:hover i{
+
+    transform:
+        scale(1.15)
+        rotate(-8deg);
+
+}
+
+/* Entrance */
+
+@keyframes contactFade{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+

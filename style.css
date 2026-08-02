@@ -537,7 +537,7 @@ header{
 
     max-width:680px;
 
-    color:#333;
+    color:var(--text);
 
     line-height:1.8;
 
@@ -2545,6 +2545,219 @@ footer{
         opacity:1;
 
         transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+/* ===================================
+   WEBSITE CARE
+=================================== */
+
+.website-care{
+
+    padding:120px 20px;
+
+}
+
+.care-card{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:50px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(18px);
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.4s ease;
+
+}
+
+.care-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+
+    left:-50%;
+
+    width:200%;
+
+    height:200%;
+
+    background:
+    radial-gradient(circle,
+    rgba(0,255,255,.08),
+    transparent 60%);
+
+    transform:rotate(20deg);
+
+    pointer-events:none;
+
+}
+
+.care-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#00e5ff;
+
+    box-shadow:
+    0 20px 60px rgba(0,229,255,.18);
+
+}
+
+.care-badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:#00e5ff;
+
+    color:#111;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+}
+
+.care-card h2{
+
+    font-size:3rem;
+
+    margin-bottom:10px;
+
+    color:#fff;
+
+}
+
+.care-card h2 small{
+
+    font-size:1.2rem;
+
+    color:#aaa;
+
+    font-weight:500;
+
+}
+
+.care-card p{
+
+    max-width:650px;
+
+    margin:0 auto 40px;
+
+    color:#bbb;
+
+    line-height:1.8;
+
+    font-size:1rem;
+
+}
+
+.care-card ul{
+
+    list-style:none;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    text-align:left;
+
+    margin:40px 0;
+
+    padding:0;
+
+}
+
+.care-card ul li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    color:#eee;
+
+    line-height:1.6;
+
+}
+
+.care-card ul li i{
+
+    color:#00e5ff;
+
+    margin-top:3px;
+
+}
+
+.website-care .btn{
+
+    margin-top:20px;
+
+}
+
+/* ===================================
+   WEBSITE CARE MOBILE
+=================================== */
+
+@media(max-width:768px){
+
+    .website-care{
+
+        padding:80px 20px;
+
+    }
+
+    .care-card{
+
+        padding:35px 25px;
+
+    }
+
+    .care-card h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .care-card ul{
+
+        grid-template-columns:1fr;
+
+        gap:15px;
 
     }
 
